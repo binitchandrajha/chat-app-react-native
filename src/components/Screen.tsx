@@ -36,7 +36,7 @@ export const Screen: React.FC<ScreenProps> = ({
   keyboardVerticalOffset = 0,
   safeArea = true,
   backgroundColor,
-  edges = ['bottom'], // 👈 default top & bottom
+  edges = [], // 👈 default top & bottom
   statusBarColor,
   ...props
 }) => {

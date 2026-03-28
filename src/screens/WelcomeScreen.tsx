@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import WelcomeScreenSvgImage from '../assets/svgs/WelcomeScreenSvgImage';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/typography';
 import { spacing, borderRadius, dimensions } from '../theme/layout';
 import { palette } from '../theme/colors';
 import { Screen } from '../components/Screen';
+import { Button } from '../components/Button';
+import { LinkButton } from '../components/LinkButton';
 
 export const WelcomeScreen = () => {
   const { colors } = useTheme();
@@ -30,23 +32,8 @@ export const WelcomeScreen = () => {
         </View>
 
         <View style={styles.bottomContainer}>
-          <Text
-            style={[
-              typography.bodyMedium,
-              styles.termsText,
-              { color: colors.text },
-            ]}
-          >
-            Terms & Privacy Policy
-          </Text>
-          <TouchableOpacity
-            style={[styles.button, { backgroundColor: colors.primaryButton }]}
-            activeOpacity={0.8}
-          >
-            <Text style={[typography.bodySemiBold, styles.buttonText]}>
-              Start Messaging
-            </Text>
-          </TouchableOpacity>
+          <LinkButton title="Terms & Privacy Policy" onPress={() => {}} />
+          <Button title="Start Messaging" onPress={() => {}} />
         </View>
       </View>
     </Screen>
