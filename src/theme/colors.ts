@@ -8,6 +8,9 @@ export type ThemeColors = {
   error: typeof palette.error;
   success: typeof palette.success;
   warning: typeof palette.warning;
+  primaryButton:
+    | typeof palette.primaryButtonLight
+    | typeof palette.primaryButtonDark;
 };
 
 export const palette = {
@@ -33,6 +36,12 @@ export const palette = {
   gray700: '#374151',
   gray800: '#1F2937',
   gray900: '#111827',
+
+  //light mode colors
+  primaryButtonLight: '#002DE3',
+
+  //dark mode colors
+  primaryButtonDark: '#375FFF',
 } as const;
 
 export const lightColors: ThemeColors = {
@@ -45,6 +54,7 @@ export const lightColors: ThemeColors = {
   error: palette.error,
   success: palette.success,
   warning: palette.warning,
+  primaryButton: palette.primaryButtonLight,
 };
 
 export const darkColors: ThemeColors = {
@@ -57,4 +67,5 @@ export const darkColors: ThemeColors = {
   error: palette.error,
   success: palette.success,
   warning: palette.warning,
+  primaryButton: palette.primaryButtonDark,
 };
