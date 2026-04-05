@@ -7,7 +7,7 @@ import {
   Pressable,
   Keyboard,
 } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import { Screen } from '../components/ui/Screen';
 import Header from '../components/ui/Header';
 import { Spacer } from '../components/ui/Spacer';
@@ -22,6 +22,7 @@ export const OtpInputField = () => {
   const inputRef = useRef<TextInput>(null);
   const { colors, isDark } = useTheme();
   const route = useRoute<any>();
+  const navigation = useNavigation<any>();
 
   // Format the phone number from params, or provide a fallback for testing
   const phoneNumber = route.params?.phoneNumber || '+62 1309 - 1710 - 1920';
@@ -37,6 +38,7 @@ export const OtpInputField = () => {
     if (formatted.length === 4) {
       Keyboard.dismiss();
       console.log('OTP Submitted', formatted);
+      navigation.navigate('ProfileSetup');
     }
   };
 

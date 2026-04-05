@@ -5,6 +5,7 @@ import { ChatScreen } from '../screens/main/ChatScreen';
 import { WelcomeScreen } from '../screens/WelcomeScreen';
 import { PhoneNumberInput } from '../screens/PhoneNumberInput';
 import { OtpInputField } from '../screens/OtpInputField';
+import { ProfileSetup } from '../screens/ProfileSetup';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,11 @@ export const AppNavigator = () => {
       <Stack.Screen
         name="Welcome"
         component={WelcomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ProfileSetup"
+        component={ProfileSetup}
         options={{ headerShown: false }}
       />
       <Stack.Screen

@@ -1,0 +1,16 @@
+import React from 'react';
+import Svg, { Path } from 'react-native-svg';
+
+const UserPlaceholderSvgIcon = ({ color }: { color: string }) => (
+  <Svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+    <Path
+      d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
+);
+
+export default UserPlaceholderSvgIcon;
