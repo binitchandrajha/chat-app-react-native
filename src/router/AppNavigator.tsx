@@ -1,11 +1,11 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { BottomTabNavigator } from './BottomTabNavigator';
-import { ChatScreen } from '../screens/main/ChatScreen';
 import { WelcomeScreen } from '../screens/WelcomeScreen';
 import { PhoneNumberInput } from '../screens/PhoneNumberInput';
 import { OtpInputField } from '../screens/OtpInputField';
 import { ProfileSetup } from '../screens/ProfileSetup';
+import { BottomTabNavigator } from './BottomTabNavigator';
+import { ChatScreen } from '../screens/main/ChatScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,8 +18,8 @@ export const AppNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="ProfileSetup"
-        component={ProfileSetup}
+        name="PhoneNumberInput"
+        component={PhoneNumberInput}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -28,8 +28,8 @@ export const AppNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="PhoneNumberInput"
-        component={PhoneNumberInput}
+        name="ProfileSetup"
+        component={ProfileSetup}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -38,7 +38,7 @@ export const AppNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Chat"
+        name="ChatDetails"
         component={ChatScreen}
         options={({ route }: any) => ({
           title: route.params?.name || 'Chat',

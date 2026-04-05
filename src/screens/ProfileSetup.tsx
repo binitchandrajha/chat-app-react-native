@@ -8,6 +8,7 @@ import {
   launchImageLibrary,
   ImagePickerResponse,
 } from 'react-native-image-picker';
+import { useNavigation } from '@react-navigation/native';
 
 import { Screen } from '../components/ui/Screen';
 import Header from '../components/ui/Header';
@@ -34,6 +35,8 @@ export const ProfileSetup = () => {
   const { colors, isDark } = useTheme();
   const [avatarUri, setAvatarUri] = useState<string | null>(null);
 
+  const navigation = useNavigation<any>();
+
   const {
     control,
     handleSubmit,
@@ -45,7 +48,10 @@ export const ProfileSetup = () => {
 
   const onSubmit = (data: any) => {
     console.log('Profile Data Saved', { ...data, avatarUri });
-    // Navigate to Main Dashboard or next step
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'Main' }],
+    });
   };
 
   const handleImageSelection = async (type: 'camera' | 'gallery') => {
