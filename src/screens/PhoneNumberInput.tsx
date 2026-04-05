@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Keyboard,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -31,6 +32,7 @@ const schema = yup.object().shape({
 });
 
 export const PhoneNumberInput = () => {
+  const navigation = useNavigation<any>();
   const { colors, isDark } = useTheme();
 
   const [countryCode, setCountryCode] = useState<CountryCode>('ID');
@@ -52,8 +54,9 @@ export const PhoneNumberInput = () => {
   };
 
   const onSubmit = (data: any) => {
-    console.log('Submitted', { callingCode, ...data });
     Keyboard.dismiss();
+    const formattedPhone = `+${callingCode} ${data.phoneNumber}`;
+    navigation.navigate('OtpInputField', { phoneNumber: formattedPhone });
   };
 
   return (
