@@ -6,12 +6,14 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/typography';
 import { spacing, borderRadius, dimensions } from '../theme/layout';
 import { palette } from '../theme/colors';
-import { Screen } from '../components/Screen';
-import { Button } from '../components/Button';
-import { LinkButton } from '../components/LinkButton';
+import { Screen } from '../components/ui/Screen';
+import { Button } from '../components/ui/Button';
+import { LinkButton } from '../components/ui/LinkButton';
+import { useNavigation } from '@react-navigation/native';
 
 export const WelcomeScreen = () => {
   const { colors, isDark } = useTheme();
+  const navigation = useNavigation();
 
   return (
     <Screen style={[styles.safeArea, { backgroundColor: colors.background }]}>
@@ -34,7 +36,10 @@ export const WelcomeScreen = () => {
 
         <View style={styles.bottomContainer}>
           <LinkButton title="Terms & Privacy Policy" onPress={() => {}} />
-          <Button title="Start Messaging" onPress={() => {}} />
+          <Button
+            title="Start Messaging"
+            onPress={() => navigation.navigate('PhoneNumberInput' as never)}
+          />
         </View>
       </View>
     </Screen>

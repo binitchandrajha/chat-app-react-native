@@ -1,6 +1,13 @@
 import React from 'react';
-import { typography, useTheme } from '../theme';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { typography, useTheme } from '../../theme';
+import {
+  StyleProp,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  ViewStyle,
+  TextStyle,
+} from 'react-native';
 
 interface LinkButtonProps {
   title: string;

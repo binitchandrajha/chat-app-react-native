@@ -7,10 +7,10 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
-import { useTheme } from '../theme/ThemeContext';
-import { typography } from '../theme/typography';
-import { dimensions, borderRadius } from '../theme/layout';
-import { palette } from '../theme/colors';
+import { useTheme } from '../../theme/ThemeContext';
+import { typography } from '../../theme/typography';
+import { dimensions, borderRadius } from '../../theme/layout';
+import { palette } from '../../theme/colors';
 
 interface ButtonProps {
   title: string;

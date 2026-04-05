@@ -13,7 +13,7 @@ import {
   Edge,
 } from 'react-native-safe-area-context';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useTheme } from '../theme';
+import { useTheme } from '../../theme';
 
 interface ScreenProps extends SafeAreaViewProps {
   children: React.ReactNode;
