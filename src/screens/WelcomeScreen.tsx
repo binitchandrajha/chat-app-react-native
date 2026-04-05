@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import WelcomeScreenSvgImage from '../assets/svgs/WelcomeScreenSvgImage';
+import WelcomeScreenDarkSvgImage from '../assets/svgs/WelcomeScreenDarkSvgImage';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/typography';
 import { spacing, borderRadius, dimensions } from '../theme/layout';
@@ -10,13 +11,13 @@ import { Button } from '../components/Button';
 import { LinkButton } from '../components/LinkButton';
 
 export const WelcomeScreen = () => {
-  const { colors } = useTheme();
+  const { colors, isDark } = useTheme();
 
   return (
     <Screen style={[styles.safeArea, { backgroundColor: colors.background }]}>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
-          <WelcomeScreenSvgImage />
+          {isDark ? <WelcomeScreenDarkSvgImage /> : <WelcomeScreenSvgImage />}
         </View>
 
         <View style={styles.textContainer}>
